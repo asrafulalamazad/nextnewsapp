@@ -10,8 +10,6 @@ export async function GET(req,res) {
         const result=await prisma.news_list.findMany({
             where:{id:id},
             include:{categories:true}
-
-
         })
         return NextResponse.json({status:"success",data:result})
     }
