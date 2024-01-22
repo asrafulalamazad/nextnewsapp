@@ -1,10 +1,11 @@
 import React from 'react';
+import PlainLayout from "@/components/master/Plain-Layout";
 
 const Page = () => {
     return (
-        <div>
+        <PlainLayout>
           Home Page
-        </div>
+        </PlainLayout>
     );
 };
 

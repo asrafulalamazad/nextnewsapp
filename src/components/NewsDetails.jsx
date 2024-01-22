@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AppNavBar = () => {
+const Hero = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const AppNavBar = () => {
     );
 };
 
-export default AppNavBar;
+export default Hero;

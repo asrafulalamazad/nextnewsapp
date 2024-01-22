@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SubmitButton = () => {
+const SubmitButtonMaster = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const SubmitButton = () => {
     );
 };
 
-export default SubmitButton;
+export default SubmitButtonMaster;
