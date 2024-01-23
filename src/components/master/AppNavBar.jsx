@@ -3,7 +3,7 @@ import React from 'react';
 import {Nav, Navbar} from "react-bootstrap";
 import Link from "next/link";
 
-const AppNavBar = () => {
+const  AppNavBar = (props) => {
     return (
         <div>
             <div className="py-2 bg-dark text-white container-fluid">
@@ -14,12 +14,12 @@ const AppNavBar = () => {
                             Date().getMonth()}/{new Date().getFullYear()} </span></h6>
                         </div>
                         <div className="col-md-4">
-<span className="float-end">
-<a target="_blank" className="text-white" href={""}><i className="mx-2 bi bifacebook"></i></a>
-<a target="_blank" className="text-white" href={""}><i className="mx-2 bi biyoutube"></i></a>
-<a target="_blank" className="text-white" href={""}><i className="mx-2 bi bi bitwitter"></i></a>
-<a target="_blank" className="text-white" href={""}><i className="mx-2 bi bilinkedin"></i></a>
-</span>
+                                <span className="float-end">
+                                <a target="_blank" className="text-white" href={props.data['socials'][0]['facebook']}><i className="mx-2 bi bi-facebook"></i></a>
+                                <a target="_blank" className="text-white" href={props.data['socials'][0]['youtube']}><i className="mx-2 bi bi-youtube"></i></a>
+                                <a target="_blank" className="text-white" href={props.data['socials'][0]['twitter']}><i className="mx-2 bi bi bi-twitter"></i></a>
+                                <a target="_blank" className="text-white" href={props.data['socials'][0]['linkedin']}><i className="mx-2 bi bi-linkedin"></i></a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,12 @@ const AppNavBar = () => {
             <Navbar.Collapse id="navbarScroll">
                             <Nav className="me-auto ms-3 my-2 my-lg-0"  navbarScroll>
                     <Link className="nav-link f-13" href="/">Home</Link>
-                    <Link key={""} className="nav-link f-13" href={"/category?id="} >{""}</Link>
+                     {
+                         props.data['categories'].map((item,i)=>{
+                             return <Link key={i} className="nav-link f-13" href={"/category?id="+item['id']} >{item['name']}</Link>
+
+                         })
+                     }
                 </Nav>
                 <div className="d-flex ms-3">
                     <div className="input-group">

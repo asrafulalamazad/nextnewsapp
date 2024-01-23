@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 const Page = () => {
     return (
         <PlainLayout>
-          <Hero/>
+            category
         </PlainLayout>
     );
 };
