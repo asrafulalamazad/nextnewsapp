@@ -3,7 +3,7 @@ import React from 'react';
 import {Nav, Navbar} from "react-bootstrap";
 import Link from "next/link";
 
-const AppNavBar = () => {
+const  AppNavBar =async (props) => {
     return (
         <div>
             <div className="py-2 bg-dark text-white container-fluid">
@@ -36,7 +36,12 @@ const AppNavBar = () => {
             <Navbar.Collapse id="navbarScroll">
                             <Nav className="me-auto ms-3 my-2 my-lg-0"  navbarScroll>
                     <Link className="nav-link f-13" href="/">Home</Link>
-                    <Link key={""} className="nav-link f-13" href={"/category?id="} >{""}</Link>
+                     {
+                         props.data['categories'].map((item,i)=>{
+                             return <Link key={i} className="nav-link f-13" href={"/category?id="+item['id']} >{item['name']}</Link>
+
+                         })
+                     }
                 </Nav>
                 <div className="d-flex ms-3">
                     <div className="input-group">
