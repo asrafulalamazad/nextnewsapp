@@ -57,7 +57,6 @@ const Footer = (props) => {
                                 <li className="my-1"><Link href=""  className="nav-link">Terms & Conditions</Link></li>
                             </ul>
                         </div>
-
                         <div className="col-md-3 col-sm-6 p-3">
                             <Subscribe/>
                         </div>
