@@ -18,7 +18,7 @@ const PlainLayout = async (props) => {
         <>
             <AppNavBar data={data} />
             {props.children}
-            <Toaster position="bottom-center"/>
+            <Toaster position="bottom-right"/>
             <Footer data={data}/>
 
         </>
