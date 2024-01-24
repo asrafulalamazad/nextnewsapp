@@ -10,8 +10,11 @@ const  AppNavBar = (props) => {
                 <div className="container">
                     <div className="row justify-content-between">
                         <div className="col-md-4">
-                            <h6><i className="bi bi-calendar2-check"></i> Today:<span> {new Date().getDay()}/{new
-                            Date().getMonth()}/{new Date().getFullYear()} </span></h6>
+                            {/*<h6><i className="bi bi-calendar2-check"></i> Today:<span> {new Date().getDay()}/{new Date().getMonth()}/{new Date().getFullYear()} </span></h6>*/}
+                            <h6><i className="bi bi-calendar2-check"></i> Today:<span> {
+                                new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"})
+
+                            } </span></h6>
                         </div>
                         <div className="col-md-4">
                                 <span className="float-end">
