@@ -1,6 +1,8 @@
 import React from 'react';
 import PlainLayout from "@/components/master/Plain-Layout";
 import Hero from "@/components/Hero";
+import NewsList from "@/components/NewsList";
+import PopularList from "@/components/PopularList";
 
 async function getData(){
     let Slider= (await (await fetch(`${process.env.HOST}/api/news/type?type=Slider`)).json())['data']
@@ -16,7 +18,19 @@ const Page =async () => {
 
     return (
         <PlainLayout>
-          <Hero featured={data['Featured']} slider={data['Slider']}  />
+            <Hero featured={data['Featured']} slider={data['Slider']}  />
+            <div className="container mt-5">
+                <h5>LATEST</h5>
+                <hr className=""/>
+                <div className="row">
+                    <div className="col-md-9 col-lg-9 col-sm-12 col-12 px-3">
+                        <NewsList latest={data['Latest']}/>
+                    </div>
+                    <div className="col-md-3 col-lg-3 col-sm-12 col-12 px-3">
+                        <PopularList popular={data['Popular']}/>
+                    </div>
+                </div>
+            </div>
         </PlainLayout>
     );
 };
