@@ -1,17 +1,17 @@
-import PlainLayout from "@/components/master/Plain-Layout";
 import NewsList from "@/components/NewsList";
 import PopularList from "@/components/PopularList";
+import PlainLayout from "@/components/master/Plain-Layout";
 
 
-async function getData(id){
-    let News= (await (await fetch(`${process.env.HOST}/api/news/category?catID=${id}`)).json())['data']
+async function getData(keyword){
     let Popular = (await (await fetch(`${process.env.HOST}/api/news/type?type=Popular`)).json())['data']
+    let News= (await (await fetch(`${process.env.HOST}/api/news/search?keyword=${keyword}`)).json())['data']
     return {News:News,Popular:Popular}
 }
 
 const Page = async (props) => {
-    let id = props.searchParams['id']
-    const data = await getData(id)
+    let keyword = props.searchParams['keyword']
+    const data = await getData(keyword)
 
     return (
 
